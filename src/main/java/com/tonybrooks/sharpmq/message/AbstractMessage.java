@@ -3,11 +3,12 @@ package com.tonybrooks.sharpmq.message;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.jms.Destination;
+import javax.jms.JMSException;
 import javax.jms.Message;
 import java.util.Enumeration;
 import java.util.Objects;
 
-public class AbstractMessage implements Message {
+public abstract class AbstractMessage implements Message {
 
     protected MessgeHeader header;
 
@@ -196,18 +197,12 @@ public class AbstractMessage implements Message {
     }
 
     public void acknowledge() {
-
+        //TODO not implement
     }
 
-    public void clearBody() {
-
-    }
-
-    public <T> T getBody(Class<T> c) {
-        return null;
-    }
-
-    public boolean isBodyAssignableTo(Class c) {
+    @Override
+    public boolean isBodyAssignableTo(Class c) throws JMSException {
+        //TODO not implement
         return false;
     }
 }
